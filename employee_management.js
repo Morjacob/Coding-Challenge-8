@@ -21,8 +21,6 @@ class Manager extends Employee {
     }
 }
 
-
-
 const alice = new Employee('Alice', 80000, 'Developer', 'Engineering');
 const bob = new Employee('Bob', 75000, 'Designer', 'Marketing');
 const charlie = new Manager('Charlie', 120000, 'Engineering Manager', 'Engineering', 2000);
@@ -34,7 +32,7 @@ console.log(charlie.getDetails());
 console.log(diana.getDetails());
 
 
-//Task 2- Create a Department Class
+//Task 2,3,4,5 - Create and Manage Departments and Employees
 
 class Department {
     constructor (name) {
