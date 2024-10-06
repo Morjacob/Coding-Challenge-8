@@ -47,7 +47,7 @@ class Department {
     getDepartmentSalary () {
     return this.employees.reduce ((total, employee)=> total + employee.salary, 0);
 }
-    calculateTotalSalaryAndBonus () {
+    calculateTotalSalaryWithBonus () {
         return this.employees.reduce ((total, employee) => {
             if (employee instanceof Manager){
                 return total +employee.salary + employee.bonus;
@@ -67,8 +67,8 @@ marketing.addEmployee(diana);
 
 console.log(`Total salary for ${engineering.name} department: $${engineering.getDepartmentSalary()}`);
 console.log(`Total salary for ${marketing.name} department: $${marketing.getDepartmentSalary()}`);
-console.log(`Total salary with bonuses for ${engineering.name} department $${engineering.calculateTotalSalaryAndBonus()}`);
-console.log(`Total salary with bonuses for ${marketing.name} department $${marketing.calculateTotalSalaryAndBonus()}`);
+console.log(`Total salary with bonuses for ${engineering.name} department $${engineering.calculateTotalSalaryWithBonus()}`);
+console.log(`Total salary with bonuses for ${marketing.name} department $${marketing.calculateTotalSalaryWithBonus()}`);
 
 
 
