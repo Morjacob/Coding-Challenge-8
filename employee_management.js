@@ -11,6 +11,7 @@ class Employee {
         return `${this.name} is a ${this.position} in the ${this.department} department with a salary of $${this.salary}.`;
     }
 }
+// Takes a manager position and returns if they have a bonus
 class Manager extends Employee {
     constructor(name, salary, position, department, bonus) {
         super(name, salary, position, department);
@@ -42,22 +43,26 @@ class Department {
     addEmployee (employee) {
         this.employees.push(employee);
     }
+//iterates over employee array and callbacks employee and total salary
     getDepartmentSalary () {
-    return this.employees.reduce ((total, employee)=> total + employee.salary, 0);
+    return this.employees.reduce ((total, employee)=> total + employee.salary, 0); 
 }
+//Task 4- iterates over employees array to check if they are a manager with a bonus
     calculateTotalSalaryWithBonus () {
         return this.employees.reduce ((total, employee) => {
             if (employee instanceof Manager){
-                return total +employee.salary + employee.bonus;
+                return total +employee.salary + employee.bonus; // adds bonus if they are a manager
             }
-            return total + employee.salary;
+            return total + employee.salary; // adds salary to total if theres no bonus
         }, 0 );
     }
 }
 
-const engineering = new Department('Engineering');
+// adding instancs of department classes
+const engineering = new Department('Engineering'); 
 const marketing = new Department('Marketing');
 
+//adds employees to respective departments
 engineering.addEmployee(alice);
 engineering.addEmployee(charlie);
 marketing.addEmployee(bob);
